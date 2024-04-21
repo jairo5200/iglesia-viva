@@ -1,6 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', '')
+@section('title', 'Iglesia viva')
+
+
+
 
 @section('content')
 

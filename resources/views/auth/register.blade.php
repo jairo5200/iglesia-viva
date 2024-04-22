@@ -1,3 +1,8 @@
+@extends('dashboard')
+
+
+@section('content')
+
 <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
@@ -33,7 +38,7 @@
                 <x-label for="rol" value="{{ __('Rol') }}" />
                 <select id="rol" name="rol" class="block mt-1 w-full" required>
                     <option value="admin">Administrador</option>
-                    <option value="usuario" selected>Ayudante</option>
+                    <option value="usuario" selected>Usuario</option>
                 </select>
             </div>
 
@@ -64,3 +69,8 @@
         </form>
     </x-authentication-card>
 </x-guest-layout>
+
+
+
+
+@endsection

@@ -1,6 +1,10 @@
 <?php
 
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\UserController;
+use Laravel\Fortify\Http\Controllers\RegisteredUserController;
+use Laravel\Fortify\Features;
+use Laravel\Fortify\RoutePath;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,8 +28,6 @@ Route::controller(PageController::class)->group(function (){
 
     //enrutamiento hacia la pagina home
     Route::get('/dashboard', 'dashboard')->name('dashboard');
-    //enrutamiento hacia la pagina post recibe como parametro la url limpia del post
-    Route::get('blog/{post:slug}', 'post')->name('post');
 
 });
 
@@ -38,4 +40,16 @@ Route::middleware([
     Route::get('/perfil', function () {
         return view('profile.show');
     })->name('perfil');
+    Route::resource('users', UserController::class);
+});
+
+
+
+Route::group(['middleware' => config('fortify.middleware', ['web'])], function () {
+
+Route::get(RoutePath::for('register', '/register'), [RegisteredUserController::class, 'create'])
+            ->name('register');
+Route::post(RoutePath::for('register', '/register'), [RegisteredUserController::class, 'store']);
+
+
 });

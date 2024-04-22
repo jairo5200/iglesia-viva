@@ -315,6 +315,11 @@ return [
             'route' => 'dashboard',
 
         ],
+        [
+            'text' => 'Usuarios',
+            'route' => 'users.index',
+
+        ],
 /*         [
             'text' => 'pages',
             'url' => 'admin/pages',

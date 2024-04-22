@@ -320,6 +320,31 @@ return [
             'route' => 'users.index',
 
         ],
+        [
+            'text' => 'Paises',
+            'route' => 'paises.index',
+
+        ],
+        [
+            'text' => 'Paises',
+            'route' => 'paises.index',
+
+        ],
+        [
+            'text' => 'Paises',
+            'route' => 'paises.index',
+
+        ],
+        [
+            'text' => 'Paises',
+            'route' => 'paises.index',
+
+        ],
+        [
+            'text' => 'Paises',
+            'route' => 'paises.index',
+
+        ],
 /*         [
             'text' => 'pages',
             'url' => 'admin/pages',

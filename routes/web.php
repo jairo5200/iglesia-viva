@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PaisController;
 use Laravel\Fortify\Http\Controllers\RegisteredUserController;
 use Laravel\Fortify\Features;
 use Laravel\Fortify\RoutePath;
@@ -41,6 +42,7 @@ Route::middleware([
         return view('profile.show');
     })->name('perfil');
     Route::resource('users', UserController::class);
+    Route::resource('paises', PaisController::class);
 });
 
 

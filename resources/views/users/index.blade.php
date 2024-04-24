@@ -27,7 +27,6 @@
                 <table class="table-auto w-full">
                     <thead>
                         <tr class="container ">
-                            <th class="px-4 py-2 text-gray-900 dark:text-black text-center">ID</th>
                             <th class="px-4 py-2 text-gray-900 dark:text-black text-center">Nombre</th>
                             <th class="px-4 py-2 text-gray-900 dark:text-black text-center">Correo</th>
                             <th class="px-4 py-2 text-gray-900 dark:text-black text-center">rol</th>
@@ -38,7 +37,6 @@
                         @foreach ( $users as $user )
                         @if (auth()->user()->name != $user->name)
                         <tr>
-                            <td class="border px-4 py-2 text-gray-900 dark:text-black text-center">{{ $user->id }}</td>
                             <td class="border px-4 py-2 text-gray-900 dark:text-black text-center">{{ $user->name }}</td>
                             <td class="border px-4 py-2 text-gray-900 dark:text-black text-center">{{ $user->email }}</td>
                             <td class="border px-4 py-2 text-gray-900 dark:text-black text-center">{{ $user->rol }}</td>

@@ -321,27 +321,27 @@ return [
 
         ],
         [
-            'text' => 'Paises',
+            'text' => 'Países',
             'route' => 'paises.index',
 
         ],
         [
-            'text' => 'Paises',
+            'text' => 'Departamentos',
+            'route' => 'departamentos.index',
+
+        ],
+        [
+            'text' => 'municipios',
+            'route' => 'municipios.index',
+
+        ],
+        [
+            'text' => 'iglesias',
             'route' => 'paises.index',
 
         ],
         [
-            'text' => 'Paises',
-            'route' => 'paises.index',
-
-        ],
-        [
-            'text' => 'Paises',
-            'route' => 'paises.index',
-
-        ],
-        [
-            'text' => 'Paises',
+            'text' => 'fieles',
             'route' => 'paises.index',
 
         ],

@@ -1,8 +1,12 @@
 <?php
 
+use App\Http\Controllers\DepartamentoController;
+use App\Http\Controllers\MunicipioController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PaisController;
+use App\Models\Departamento;
+use App\Models\Pais;
 use Laravel\Fortify\Http\Controllers\RegisteredUserController;
 use Laravel\Fortify\Features;
 use Laravel\Fortify\RoutePath;
@@ -43,6 +47,9 @@ Route::middleware([
     })->name('perfil');
     Route::resource('users', UserController::class);
     Route::resource('paises', PaisController::class);
+    Route::resource('departamentos', DepartamentoController::class);
+    Route::resource('municipios', MunicipioController::class);
+
 });
 
 
@@ -52,6 +59,12 @@ Route::group(['middleware' => config('fortify.middleware', ['web'])], function (
 Route::get(RoutePath::for('register', '/register'), [RegisteredUserController::class, 'create'])
             ->name('register');
 Route::post(RoutePath::for('register', '/register'), [RegisteredUserController::class, 'store']);
+
+
+Route::get('/paises/{id}/departamentos', function ($id){
+    $pais = Pais::find($id);
+    return Departamento::where('pais_id', $pais->id)->get();
+});
 
 
 });

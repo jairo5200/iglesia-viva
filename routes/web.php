@@ -1,11 +1,15 @@
 <?php
 
 use App\Http\Controllers\DepartamentoController;
+use App\Http\Controllers\FielController;
+use App\Http\Controllers\IglesiaController;
 use App\Http\Controllers\MunicipioController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PaisController;
 use App\Models\Departamento;
+use App\Models\Iglesia;
+use App\Models\Municipio;
 use App\Models\Pais;
 use Laravel\Fortify\Http\Controllers\RegisteredUserController;
 use Laravel\Fortify\Features;
@@ -49,6 +53,8 @@ Route::middleware([
     Route::resource('paises', PaisController::class);
     Route::resource('departamentos', DepartamentoController::class);
     Route::resource('municipios', MunicipioController::class);
+    Route::resource('iglesias', IglesiaController::class);
+    Route::resource('fiels', FielController::class);
 
 });
 
@@ -64,6 +70,14 @@ Route::post(RoutePath::for('register', '/register'), [RegisteredUserController::
 Route::get('/paises/{id}/departamentos', function ($id){
     $pais = Pais::find($id);
     return Departamento::where('pais_id', $pais->id)->get();
+});
+Route::get('/departamentos/{id}/municipios', function ($id){
+    $departamento = Departamento::find($id);
+    return Municipio::where('departamento_id', $departamento->id)->get();
+});
+Route::get('/municipios/{id}/iglesias', function ($id){
+    $municipio = Municipio::find($id);
+    return Iglesia::where('municipio_id', $municipio->id)->get();
 });
 
 

@@ -337,12 +337,12 @@ return [
         ],
         [
             'text' => 'iglesias',
-            'route' => 'paises.index',
+            'route' => 'iglesias.index',
 
         ],
         [
             'text' => 'fieles',
-            'route' => 'paises.index',
+            'route' => 'fiels.index',
 
         ],
 /*         [

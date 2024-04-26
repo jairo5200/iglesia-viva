@@ -13,4 +13,10 @@ class Iglesia extends Model
         'name',
         'municipio_id'
     ];
+
+    public function Municipio(){
+        return $this->hasOne(Municipio::class, 'id', 'municipio_id');
+    }
+
+
 }

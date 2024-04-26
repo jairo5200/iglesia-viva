@@ -19,7 +19,7 @@ class FielController extends Controller
     {
         $iglesias = Iglesia::all();
         $fiels = Fiel::all();
-        return view('fiels.index',compact('iglesias','fiels',));
+        return view('fiels.index',compact('iglesias','fiels'));
     }
 
     /**
@@ -39,22 +39,40 @@ class FielController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'id_documento' => 'required|string|max:100',
-            'name' => 'required|string|max:100',
-            'fecha_de_nacimiento' => 'required',
-            'telefono' => 'required|string|max:100',
-            'direccion' => 'required|string|max:100',
-            'fecha_de_ingreso' => 'required',
-            'cargo' => 'required|string|max:100',
-            'escuela_actual' => 'required|string|max:100',
-            'imagen' => 'required|image|mimes:jpeg,jpeg,png,svg|max:1024',
-            'pais_id' => 'required|string',
-            'departamento_id' => 'required|string|',
-            'municipio_id' => 'required|string|',
-            'iglesia_id' => 'required|string|',
+        if ($request->hasFile('imagen')) {
+            $request->validate([
+                'id_documento' => 'required|string|max:100',
+                'name' => 'required|string|max:100',
+                'fecha_de_nacimiento' => 'required',
+                'telefono' => 'required|string|max:100',
+                'direccion' => 'required|string|max:100',
+                'fecha_de_ingreso' => 'required',
+                'cargo' => 'required|string|max:100',
+                'escuela_actual' => 'required|string|max:100',
+                'imagen' => 'required|image|mimes:jpeg,jpeg,png,svg|max:1024',
+                'pais_id' => 'required|string',
+                'departamento_id' => 'required|string|',
+                'municipio_id' => 'required|string|',
+                'iglesia_id' => 'required|string|',
 
-        ]);
+            ]);
+        }else {
+            $request->validate([
+                'id_documento' => 'required|string|max:100',
+                'name' => 'required|string|max:100',
+                'fecha_de_nacimiento' => 'required',
+                'telefono' => 'required|string|max:100',
+                'direccion' => 'required|string|max:100',
+                'fecha_de_ingreso' => 'required',
+                'cargo' => 'required|string|max:100',
+                'escuela_actual' => 'required|string|max:100',
+                'pais_id' => 'required|string',
+                'departamento_id' => 'required|string|',
+                'municipio_id' => 'required|string|',
+                'iglesia_id' => 'required|string|',
+
+            ]);
+        }
 
 
         $fiel = $request->all();
@@ -66,9 +84,7 @@ class FielController extends Controller
             $imagen->move($rutaGuardarImg,$imagenFiel);
             $fiel['imagen'] = "$imagenFiel";
         }
-        else {
-            # code...
-        }
+
 
         Fiel::create($fiel);
 

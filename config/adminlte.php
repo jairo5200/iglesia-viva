@@ -331,17 +331,17 @@ return [
 
         ],
         [
-            'text' => 'municipios',
+            'text' => 'Municipios',
             'route' => 'municipios.index',
 
         ],
         [
-            'text' => 'iglesias',
+            'text' => 'Iglesias',
             'route' => 'iglesias.index',
 
         ],
         [
-            'text' => 'fieles',
+            'text' => 'Fieles',
             'route' => 'fiels.index',
 
         ],

@@ -1,6 +1,10 @@
 @extends('dashboard')
 
 
+@section('css')
+    <link href="https://cdn.datatables.net/2.0.5/css/dataTables.dataTables.min.css" rel="stylesheet">
+@endsection
+
 @section('content')
 <x-app-layout>
 
@@ -20,7 +24,7 @@
 
 
             <div class="mt-10">
-                <table class="table-auto w-full">
+                <table id="paises" class="table-auto w-full table table-striped table-bordered shadow-lg mt-4">
                     <thead>
                         <tr class="container ">
                             <th class="px-4 py-2 text-gray-900 dark:text-black text-center">Nombre</th>
@@ -56,8 +60,13 @@
 @endsection
 
 @section('js')
+    <script src="https://cdn.datatables.net/2.0.5/js/dataTables.min.js"></script>
 
-     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+    new DataTable('#paises');
+    </script>
 
     <script>
 

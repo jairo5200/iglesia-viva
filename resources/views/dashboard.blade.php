@@ -1,5 +1,7 @@
 @extends('adminlte::page')
 
+@yield('css')
+
 @section('title', 'Iglesia viva')
 
 

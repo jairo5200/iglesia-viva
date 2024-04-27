@@ -6,7 +6,7 @@
 <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
-            <x-authentication-card-logo />
+            <img src="/imagen/iglesia-logo.png" style="max-height: 200px; max-width: 200px;">
         </x-slot>
 
         <x-validation-errors class="mb-4" />

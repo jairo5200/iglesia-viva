@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'Iglesia viva',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -84,12 +84,12 @@ return [
     */
 
     'auth_logo' => [
-        'enabled' => false,
+        'enabled' => true,
         'img' => [
             'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
             'alt' => 'Auth Logo',
             'class' => '',
-            'width' => 50,
+            'width' => 100,
             'height' => 50,
         ],
     ],
@@ -296,20 +296,11 @@ return [
     'menu' => [
         // Navbar items:
         [
-            'type' => 'navbar-search',
-            'text' => 'search',
-            'topnav_right' => true,
-        ],
-        [
             'type' => 'fullscreen-widget',
             'topnav_right' => true,
         ],
 
         // Sidebar items:
-        [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
-        ],
         [
             'text' => 'Dashboard',
             'route' => 'dashboard',
@@ -323,7 +314,6 @@ return [
         [
             'text' => 'Países',
             'route' => 'paises.index',
-
         ],
         [
             'text' => 'Departamentos',
@@ -343,6 +333,7 @@ return [
         [
             'text' => 'Fieles',
             'route' => 'fiels.index',
+            'icon' => 'fas fa-fw fa-users',
 
         ],
 /*         [

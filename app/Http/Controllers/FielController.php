@@ -13,7 +13,7 @@ use PhpParser\Node\Expr\Cast\String_;
 class FielController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Muestra la vista con la lista de Fieles
      */
     public function index()
     {
@@ -23,7 +23,7 @@ class FielController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Muestra el fomulario para crear un nuevo Fiel
      */
     public function create()
     {
@@ -35,7 +35,7 @@ class FielController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Almacena el nuevo Fiel en la base de datos
      */
     public function store(Request $request)
     {
@@ -100,7 +100,7 @@ class FielController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Muestra el formulario para editar un Fiel especifico
      */
     public function edit(String $id)
     {
@@ -113,7 +113,7 @@ class FielController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Actualiza la informacion del Fiel en la base de datos
      */
     public function update(Request $request, String $id)
     {
@@ -175,13 +175,13 @@ class FielController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remueve el Fiel especifico de la base de datos
      */
     public function destroy(string $id)
     {
         $fiel = Fiel::findOrFail($id);
         $rutaGuardarImagen = 'imagen/';
-        if ($fiel->imagen != null) {
+        if ($fiel->imagen != null) {// se verifica que el Fiel tenga foto.
             $ruta = $rutaGuardarImagen.$fiel['imagen'];
             unlink($ruta);  // con este código se elimina la foto de la carpeta
         }

@@ -12,7 +12,7 @@ use function Laravel\Prompts\alert;
 class DepartamentoController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Muestra la vista con la lista de Departamentos
      */
     public function index()
     {
@@ -22,7 +22,7 @@ class DepartamentoController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Muestra el fomulario para crear un nuevo Departamento
      */
     public function create()
     {
@@ -31,7 +31,7 @@ class DepartamentoController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Almacena el nuevo Departamento en la base de datos
      */
     public function store(Request $request)
     {
@@ -53,7 +53,7 @@ class DepartamentoController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Muestra el formulario para editar un Departamento especifico
      */
     public function edit(string $id)
     {
@@ -63,7 +63,7 @@ class DepartamentoController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Actualiza la informacion del Departamento en la base de datos
      */
     public function update(Request $request, string $id)
     {
@@ -78,7 +78,7 @@ class DepartamentoController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remueve el Departamentos especifico de la base de datos
      */
     public function destroy(string $id)
     {

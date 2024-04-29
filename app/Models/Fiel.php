@@ -10,6 +10,11 @@ class Fiel extends Model
     use HasFactory;
 
 
+    /**
+     * atributos que seran asignables en masa
+     *
+     * @var array<int, string>
+     */
     protected $fillable = [
         'id_documento',
         'name',
@@ -23,7 +28,7 @@ class Fiel extends Model
         'iglesia_id'
     ];
 
-
+    //funcion que nos permite interactuar con la Iglesia del Fiel
     public function Iglesia(){
         return $this->hasOne(Iglesia::class, 'id', 'iglesia_id');
     }

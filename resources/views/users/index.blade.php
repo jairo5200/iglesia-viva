@@ -73,11 +73,17 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
-    new DataTable('#usuarios');
+        /**
+         * Se crea la tabla de datos usuarios
+         */
+        new DataTable('#usuarios');
     </script>
 
     <script>
 
+        /**
+         * Alerta de confirmacion de eliminación
+         */
         $('.formulario-eliminar').submit(function(e){
             e.preventDefault()
 

@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Muestra la vista con la lista de Usuarios
      */
     public function index()
     {
@@ -57,7 +57,7 @@ class UserController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * remueve el Usuario especifico de la base de datos
      */
     public function destroy(string $id)
     {

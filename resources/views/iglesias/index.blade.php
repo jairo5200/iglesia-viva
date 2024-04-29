@@ -68,11 +68,16 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
+        /**
+         * se crea la tabla de datos iglesias
+         */
         new DataTable('#iglesias');
     </script>
 
     <script>
-
+        /**
+         * alerta de confirmacion de eliminación
+         */
         $('.formulario-eliminar').submit(function(e){
             e.preventDefault()
 

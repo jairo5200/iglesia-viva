@@ -65,11 +65,16 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
-    new DataTable('#paises');
+        /**
+         * Se crea la tabla de datos paises
+         */
+        new DataTable('#paises');
     </script>
 
     <script>
-
+        /**
+         * Alerta de confirmacion de eliminación
+         */
         $('.formulario-eliminar').submit(function(e){
             e.preventDefault()
 

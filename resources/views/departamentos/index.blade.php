@@ -68,11 +68,16 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
-    new DataTable('#departamentos');
+        /**
+         * se crea la tabla de datos departamentos
+         */
+        new DataTable('#departamentos');
     </script>
 
     <script>
-
+        /**
+         * alerta de confirmacion de eliminación
+         */
         $('.formulario-eliminar').submit(function(e){
             e.preventDefault()
 

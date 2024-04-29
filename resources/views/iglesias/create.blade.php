@@ -63,6 +63,9 @@
 
 <script>
 
+    /**
+     * se buscan los Departamentos del País seleccionado.
+     */
     function loadDepartamentos(paisSelect){
         let departamentoSelect = document.getElementById('departamento_id');
         let municipioSelect = document.getElementById('municipio_id');
@@ -79,6 +82,9 @@
 
     }
 
+    /**
+     * se buscan los Municipios del Departamento seleccionado.
+     */
     function loadMunicipios(departamentoSelect){
         let municipioSelect = document.getElementById('municipio_id');
         clearSelect(municipioSelect);
@@ -93,6 +99,9 @@
 
     }
 
+    /**
+     *  se carga los Departamentos del País seleccionado en el select
+     */
     function buildDepartamentos(jsonData) {
         let departamentoSelect = document.getElementById('departamento_id');
         clearSelect(departamentoSelect);
@@ -105,6 +114,9 @@
     }
 
 
+    /**
+     *  se carga los Municipios del Departamento seleccionado en el select
+     */
     function buildMunicipios(jsonData) {
         let municipioSelect = document.getElementById('municipio_id');
         clearSelect(municipioSelect);
@@ -116,13 +128,18 @@
         });
     }
 
-
+    /**
+     * se limpia el select que se envia como parametro
+     */
     function clearSelect(select){
         while (select.options.length >1) {
             select.remove(1);
         }
     }
 
+    /**
+     * se valida que se selecciono un País, Departamento y Municipio validos.
+     */
     $('.formulario-crear').submit(function(e){
             e.preventDefault()
             let selectPais = document.getElementById('pais_id');

@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class IglesiaController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Muestra la vista con la lista de Iglesias
      */
     public function index()
     {
@@ -21,7 +21,7 @@ class IglesiaController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Muestra el fomulario para crear una nueva Iglesia
      */
     public function create()
     {
@@ -33,7 +33,7 @@ class IglesiaController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Almacena la nueva Iglesia en la base de datos
      */
     public function store(Request $request)
     {
@@ -55,7 +55,7 @@ class IglesiaController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Muestra el formulario para editar una Iglesia especifica
      */
     public function edit(string $id)
     {
@@ -67,7 +67,7 @@ class IglesiaController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Actualiza la informacion de la Iglesia en la base de datos
      */
     public function update(Request $request, string $id)
     {
@@ -82,7 +82,7 @@ class IglesiaController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remueve la Iglesia especifica de la base de datos
      */
     public function destroy(string $id)
     {

@@ -9,7 +9,11 @@ class Pais extends Model
 {
     use HasFactory;
 
-
+    /**
+     * Atributos que seran asignables en masa
+     *
+     * @var array<int, string>
+     */
     protected $fillable = [
         'name'
     ];

@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class PaisController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Muestra la vista con la lista de Paises
      */
     public function index()
     {
@@ -17,7 +17,7 @@ class PaisController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Muestra el fomulario para crear un nuevo País
      */
     public function create()
     {
@@ -25,7 +25,7 @@ class PaisController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Almacena el nuevo País en la base de datos
      */
     public function store(Request $request)
     {
@@ -47,7 +47,7 @@ class PaisController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Muestra el formulario para editar un País especifico
      */
     public function edit(string $id)
     {
@@ -56,7 +56,7 @@ class PaisController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Actualiza la informacion del País en la base de datos
      */
     public function update(Request $request, string $id)
     {
@@ -71,7 +71,7 @@ class PaisController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remueve el País especifico de la base de datos
      */
     public function destroy(string $id)
     {

@@ -19,7 +19,7 @@ class User extends Authenticatable
     use TwoFactorAuthenticatable;
 
     /**
-     * The attributes that are mass assignable.
+     * Atributos que seran asignables en masa
      *
      * @var array<int, string>
      */
@@ -31,7 +31,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * The attributes that should be hidden for serialization.
+     * los atributos que estaran escondidos por la serializacion
      *
      * @var array<int, string>
      */

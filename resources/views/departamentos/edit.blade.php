@@ -56,6 +56,9 @@
 
     <script>
 
+        /**
+         * se valida que se seleccione un País
+         */
         $('.formulario-actualizar').submit(function(e){
             e.preventDefault()
             let selectPais = document.getElementById('pais_id');

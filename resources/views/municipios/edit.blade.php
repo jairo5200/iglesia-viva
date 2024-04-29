@@ -59,6 +59,9 @@
 
 <script>
 
+    /**
+     * Se buscan los Departamentos del País seleccionado.
+     */
     function loadDepartamentos(paisSelect){
         let departamentoSelect = document.getElementById('departamento_id');
         clearSelect(departamentoSelect);
@@ -73,6 +76,9 @@
 
     }
 
+    /**
+     *  Se carga los Departamentos del País seleccionado en el select
+     */
     function buildDepartamentos(jsonData) {
         let departamentoSelect = document.getElementById('departamento_id');
         clearSelect(departamentoSelect);
@@ -85,12 +91,18 @@
     }
 
 
+    /**
+     * Se limpia el select que se envia como parametro
+     */
     function clearSelect(select){
         while (select.options.length >1) {
             select.remove(1);
         }
     }
 
+    /**
+     * Se valida que se selecciono un País y un Departamento validos.
+     */
     $('.formulario-actualizar').submit(function(e){
             e.preventDefault()
             let selectPais = document.getElementById('pais_id');

@@ -104,6 +104,9 @@
 
 <script>
 
+    /**
+     * Se buscan los Departamentos del País seleccionado.
+     */
     function loadDepartamentos(paisSelect){
         let departamentoSelect = document.getElementById('departamento_id');
         let municipioSelect = document.getElementById('municipio_id');
@@ -120,6 +123,9 @@
 
     }
 
+    /**
+     * Se buscan los Municipios del Departamento seleccionado.
+     */
     function loadMunicipios(departamentoSelect){
         let municipioSelect = document.getElementById('municipio_id');
         clearSelect(municipioSelect);
@@ -134,6 +140,9 @@
 
     }
 
+    /**
+     * Se buscan las Iglesias del Municipio seleccionado.
+     */
     function loadIglesias(municipioSelect){
         let iglesiaSelect = document.getElementById('iglesia_id');
         clearSelect(iglesiaSelect);
@@ -148,6 +157,9 @@
 
     }
 
+    /**
+     *  Se carga los Departamentos del País seleccionado en el select
+     */
     function buildDepartamentos(jsonData) {
         let departamentoSelect = document.getElementById('departamento_id');
         clearSelect(departamentoSelect);
@@ -159,7 +171,9 @@
         });
     }
 
-
+    /**
+     *  Se carga los Municipios del Departamento seleccionado en el select
+     */
     function buildMunicipios(jsonData) {
         let municipioSelect = document.getElementById('municipio_id');
         clearSelect(municipioSelect);
@@ -171,6 +185,9 @@
         });
     }
 
+    /**
+     *  Se carga las Iglesias del Municipio seleccionado en el select
+     */
     function buildIglesias(jsonData) {
         let iglesiaSelect = document.getElementById('iglesia_id');
         clearSelect(iglesiaSelect);
@@ -182,13 +199,18 @@
         });
     }
 
-
+    /**
+     * Se limpia el select que se envia como parametro
+     */
     function clearSelect(select){
         while (select.options.length >1) {
             select.remove(1);
         }
     }
 
+    /**
+     * Se valida que se selecciono un País, Departamento, Municipio e Iglesia validos.
+     */
     $('.formulario-actualizar').submit(function(e){
             e.preventDefault()
             let selectPais = document.getElementById('pais_id');
@@ -212,6 +234,9 @@
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script>
+    /**
+     * Script para previsualizar la imagen a cargar
+     */
     $(document).ready(function (e) {
         $('#imagen').change(function(){
             let reader = new FileReader();

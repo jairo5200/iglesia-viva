@@ -68,11 +68,16 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
-    new DataTable('#municipios');
+        /**
+         * Se crea la tabla de datos municipios
+         */
+        new DataTable('#municipios');
     </script>
 
     <script>
-
+        /**
+         * Alerta de confirmacion de eliminación
+         */
         $('.formulario-eliminar').submit(function(e){
             e.preventDefault()
 

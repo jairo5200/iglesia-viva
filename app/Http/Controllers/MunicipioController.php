@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class MunicipioController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Muestra la vista con la lista de Municipios
      */
     public function index()
     {
@@ -20,7 +20,7 @@ class MunicipioController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Muestra el fomulario para crear un nuevo Municipio
      */
     public function create()
     {
@@ -34,7 +34,7 @@ class MunicipioController extends Controller
 
 
     /**
-     * Store a newly created resource in storage.
+     * Almacena el nuevo Municipio en la base de datos
      */
     public function store(Request $request)
     {
@@ -56,7 +56,7 @@ class MunicipioController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Muestra el formulario para editar un Municipio especifico
      */
     public function edit(string $id)
     {
@@ -67,7 +67,7 @@ class MunicipioController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Actualiza la informacion del Municipio en la base de datos
      */
     public function update(Request $request, string $id)
     {
@@ -82,7 +82,7 @@ class MunicipioController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remueve el Municipio especifico de la base de datos
      */
     public function destroy(string $id)
     {

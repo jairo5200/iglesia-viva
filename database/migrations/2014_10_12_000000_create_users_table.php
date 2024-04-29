@@ -11,6 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
+        /**
+         * se crea la tabla users en la base de datos
+         */
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');

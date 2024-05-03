@@ -53,7 +53,7 @@
                             <td class="border px-4 py-2 text-gray-900 dark:text-black text-center">{{ date('d/m/Y',strtotime("$fiel->fecha_de_ingreso")) }}</td>
                             <td class="border px-4 py-2 text-gray-900 dark:text-black text-center">{{ $fiel->cargo }}</td>
                             <td class="border px-4 py-2 text-gray-900 dark:text-black text-center">{{ $fiel->escuela_actual }}</td>
-                            <td class="border px-4 py-2 text-gray-900 dark:text-black text-center"><img src="/imagen/{{$fiel->imagen}}" onerror="this.src='/imagen/fiel.png';" ></td><---  en caso de error se carga una imagen por defecto  ->
+                            <td class="border px-4 py-2 text-gray-900 dark:text-black text-center"><img src="/imagen/{{$fiel->imagen}}" onerror="this.src='/imagen/fiel.png';" ></td><!-- en caso de error se carga una imagen por defecto -->
                             <td class="border px-4 py-2 text-gray-900 dark:text-black text-center">{{$fiel->Iglesia->name}}</td>
                             <td class="border px-4 py-2 text-center flex">
                                 <form method="POST" action="{{route('fiels.destroy', $fiel->id)}}" class="formulario-eliminar mt-4">

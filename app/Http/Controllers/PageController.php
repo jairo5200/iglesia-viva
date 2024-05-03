@@ -60,4 +60,8 @@ class PageController extends Controller
         return view('dashboard');
 
     }
+
+    public function inicio(){
+        return view('paginas.index');
+    }
 }

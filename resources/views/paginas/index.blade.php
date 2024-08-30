@@ -2,7 +2,8 @@
 
 @section('contenido')
 
-<div class="flex flex-col items-center justify-between px-4 py-12 mx-auto max-w-7xl md:flex-row">
+
+<div class="flex flex-col items-center justify-between px-4 py-12 mx-auto max-w-7xl md:flex-row bg-white">
     <div>
         <h1 class="mb-3 text-4xl font-bold text-center text-gray-900 md:leading-tight md:text-5xl" itemprop="headline" >
         Titulo Principal

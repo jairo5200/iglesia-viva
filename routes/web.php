@@ -27,14 +27,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/* Route::get('/', function () {
-    return view('paginas.index');
-}); */
-
-
 
 Route::controller(PageController::class)->group(function (){
-
+    //enrutamiento hacia la pagina index
     Route::get('/', 'inicio')->name('inicio');
     //enrutamiento hacia la pagina dashboard
     Route::get('/dashboard', 'dashboard')->name('dashboard');

@@ -96,7 +96,8 @@ class FielController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $fiel = Fiel::findOrFail($id);
+        return view('fiels.show', compact('fiel'));
     }
 
     /**

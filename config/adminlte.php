@@ -302,6 +302,11 @@ return [
 
         // Sidebar items:
         [
+            'text' => 'Página',
+            'route' => 'inicio',
+
+        ],
+        [
             'text' => 'Dashboard',
             'route' => 'dashboard',
 
@@ -392,7 +397,7 @@ return [
                 ],
             ],
         ], */
-        ['header' => 'labels'],
+        /* ['header' => 'labels'],
         [
             'text' => 'important',
             'icon_color' => 'red',
@@ -407,7 +412,7 @@ return [
             'text' => 'information',
             'icon_color' => 'cyan',
             'url' => '#',
-        ],
+        ], */
     ],
 
     /*

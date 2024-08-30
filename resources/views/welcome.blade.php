@@ -29,6 +29,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         @vite('resources/css/app.css')
 
         <style>
@@ -38,7 +39,7 @@
     <body>
 
 
-    <header class="z-30 w-full px-2 py-4 bg-white sm:px-4 sticky top-0 bg-white shadow">
+    <header class="z-30 w-full px-2 py-4 bg-orange-800 sm:px-4 sticky top-0 shadow ">
   <div class="flex items-center justify-between mx-auto max-w-7xl">
     <a href="/" title="Kutty Home Page" class="flex items-center hover:text-orange-500">
         <img src="/imagen/principal.png" style="max-height: 150px; max-width: 150px;" alt="Iglesia Viva">
@@ -199,7 +200,7 @@
 
 
         <footer class="flex flex-col items-center justify-between px-4 py-12 mx-auto max-w-7xl md:flex-row">
-  <p class="mb-8 text-sm text-center text-gray-700 md:text-left md:mb-0">© Copyright 2024 Jairo Bastidas. Todos Los Derechos Reservados.</p>
+  <p class="mb-8 text-sm text-center text-gray-700 md:text-left md:mb-0">© Copyright 2024 Iglesia Viva. Todos Los Derechos Reservados.</p>
   <div class="flex items-center space-x-6">
     <a href="#">
       <span class="sr-only">Twitter</span>

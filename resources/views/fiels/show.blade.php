@@ -44,7 +44,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="mt-10">
-                                        <table id="legalizacion" class="table-auto w-full table table-striped table-bordered shadow-lg mt-4">
+                                        <table id="escuelas" class="table-auto w-full table table-striped table-bordered shadow-lg mt-4">
                                             <thead>
                                                 <tr class="container ">
                                                     <th class="px-4 py-2 text-gray-900 dark:text-black text-center">Numero de identificacion</th>

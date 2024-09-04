@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('escuelas', function (Blueprint $table) {
             $table->id();
-            $table->integer('numeral')->autoIncrement()->from(1)->unsigned();
             $table->string('nombre');
             $table->string('horario')->nullable(true);
             $table->date('fecha_inicio');
@@ -22,6 +21,7 @@ return new class extends Migration
             $table->string('paga_grado')->nullable(true);
             $table->string('nota_final')->nullable(true);
             $table->string('diploma')->nullable(true);
+            $table->unsignedBigInteger('fiel_id');
             $table->foreign('fiel_id')->references('id')->on('fiels');
             $table->timestamps();
         });

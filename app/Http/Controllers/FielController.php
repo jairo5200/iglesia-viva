@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Departamento;
+use App\Models\Escuela;
 use App\Models\Fiel;
 use App\Models\Iglesia;
 use App\Models\Municipio;
@@ -97,7 +98,8 @@ class FielController extends Controller
     public function show(string $id)
     {
         $fiel = Fiel::findOrFail($id);
-        return view('fiels.show', compact('fiel'));
+        $escuelas = Escuela::where('fiel_id', $id)->orderBy('fecha_inicio', 'asc')->get();
+        return view('fiels.show', compact('fiel','escuelas'));
     }
 
     /**

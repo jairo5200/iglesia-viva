@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DepartamentoController;
+use App\Http\Controllers\EscuelaController;
 use App\Http\Controllers\FielController;
 use App\Http\Controllers\IglesiaController;
 use App\Http\Controllers\MunicipioController;
@@ -51,6 +52,7 @@ Route::middleware([
     Route::resource('municipios', MunicipioController::class);// ruta para el controllador de municipio
     Route::resource('iglesias', IglesiaController::class);// ruta para el controllador de iglesia
     Route::resource('fiels', FielController::class);// ruta para el controllador de fiel
+    Route::resource('escuelas', EscuelaController::class);// ruta para el controllador de escuela
 
 });
 

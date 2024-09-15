@@ -312,6 +312,11 @@ return [
 
         ],
         [
+            'text' => 'Noticias',
+            'route' => 'noticias.index',
+
+        ],
+        [
             'text' => 'Usuarios',
             'route' => 'users.index',
 

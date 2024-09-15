@@ -5,6 +5,7 @@ use App\Http\Controllers\EscuelaController;
 use App\Http\Controllers\FielController;
 use App\Http\Controllers\IglesiaController;
 use App\Http\Controllers\MunicipioController;
+use App\Http\Controllers\NoticiaController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PaisController;
@@ -53,7 +54,7 @@ Route::middleware([
     Route::resource('iglesias', IglesiaController::class);// ruta para el controllador de iglesia
     Route::resource('fiels', FielController::class);// ruta para el controllador de fiel
     Route::resource('escuelas', EscuelaController::class);// ruta para el controllador de escuela
-
+    Route::resource('noticias', NoticiaController::class);// ruta para el controllador de noticia
 });
 
 

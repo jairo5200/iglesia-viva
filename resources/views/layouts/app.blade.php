@@ -18,7 +18,7 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-        <script src="https://cdn.tiny.cloud/1/dra54virhmzescjl4wdau59r6vjgxj8flak6nwdc338nz6r4/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+
         <!-- Styles -->
         @livewireStyles
 

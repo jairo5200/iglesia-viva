@@ -62,7 +62,8 @@ class NoticiaController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $noticia = Noticia::find($id);
+        return view('noticias.show', compact('noticia'));
     }
 
     /**
@@ -70,7 +71,8 @@ class NoticiaController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $noticia = Noticia::find($id);
+        return view('noticias.edit', compact('noticia'));
     }
 
     /**
@@ -78,7 +80,38 @@ class NoticiaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        if ($request->hasFile('imagen')) {
+            $request->validate([
+                'titulo' => 'required|string',
+                'slug' => 'required|string',
+                'imagen' => 'required|image|mimes:jpeg,jpeg,png,svg|max:1024',
+                'activo' => 'required|boolean',
+                'user_id' => 'required|string'
+            ]);
+        }else {
+            $request->validate([
+                'titulo' => 'required|string',
+                'slug' => 'required|string',
+                'activo' => 'required|boolean',
+                'user_id' => 'required|string'
+
+            ]);
+        }
+        $noticia = Noticia::find($id);
+        $noticiaCambio = $request->all();
+
+        $rutaGuardarImagen = 'imagen/';
+        if($imagen = $request->file('imagen')) {
+            $ruta = $rutaGuardarImagen.$noticia['imagen'];
+            if($noticia['imagen'] != null){
+            unlink($ruta); // con este código se elimina la foto de la carpeta
+            }
+            $imagenNoticia = date('YmdHis'). "." . $imagen->getClientOriginalExtension();
+            $imagen->move($rutaGuardarImagen, $imagenNoticia);
+            $noticiaCambio['imagen'] = "$imagenNoticia";
+        }
+        $noticia->update($noticiaCambio);
+        return redirect()->route('noticias.index')->with('info', 'Noticia actualizada con exito');
     }
 
     /**
@@ -86,6 +119,13 @@ class NoticiaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $noticia = Noticia::find($id);
+        $rutaGuardarImagen = 'imagen/';
+        if ($noticia->imagen != null) {// se verifica que la noticia tenga foto.
+            $ruta = $rutaGuardarImagen.$noticia['imagen'];
+            unlink($ruta);  // con este código se elimina la foto de la carpeta.
+        }
+        $noticia->delete();
+        return redirect()->route('noticias.index')->with('info', 'Noticia eliminada con exito');
     }
 }

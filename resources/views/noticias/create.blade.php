@@ -31,8 +31,6 @@
                             </label>
                         </div>
                         <input type="hidden" name="activo" id="activo" value="0">
-                        <label for="descripcion" class="block mb-2 text-l font-medium text-gray-900 dark:text-black">Descripcion</label>
-                        <textarea id=descripcion name="descripcion"></textarea>
                     </div>
                     <div class="col-sm">
                         <div class="grid grid-cols-1  mx-7">
@@ -53,6 +51,8 @@
                     </div>
 
                     </div>
+                        <label for="descripcion" class="block mb-2 text-l font-medium text-gray-900 dark:text-black">Descripcion</label>
+                        <textarea id=descripcion name="descripcion"></textarea>
                         <div class="col mt-4">
                             <input type="hidden" name="user_id" id="user_id" value="{{auth()->user()->id}}">
                             <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mb-2">Crear Noticia</button>
@@ -117,8 +117,12 @@
     });
 
     tinymce.init({
-        selector: 'textarea#descripcion',
-    });
+    selector: 'textarea#descripcion', // Replace this CSS selector to match the placeholder element for TinyMCE
+    height: 800,
+    plugins: 'code table lists image link',
+    toolbar: 'undo redo | blocks | forecolor fontfamily | bold italic underline | alignleft aligncenter alignright | indent outdent | bullist numlist | code | table | image | link'
+
+  });
 
 </script>
 

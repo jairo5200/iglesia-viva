@@ -79,7 +79,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-<script src="https://cdn.tiny.cloud/1/dra54virhmzescjl4wdau59r6vjgxj8flak6nwdc338nz6r4/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="{{ asset('js\tinymce\tinymce.min.js') }}" referrerpolicy="origin"></script>
 
 <script>
 

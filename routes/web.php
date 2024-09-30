@@ -33,6 +33,8 @@ use Illuminate\Support\Facades\Route;
 Route::controller(PageController::class)->group(function (){
     //enrutamiento hacia la pagina index
     Route::get('/', 'inicio')->name('inicio');
+    //enrutamiento hacia la pagina de cada noticia
+    Route::get('/noticia/{id}', 'noticia')->name('noticia');
     //enrutamiento hacia la pagina dashboard
     Route::get('/dashboard', 'dashboard')->name('dashboard');
 

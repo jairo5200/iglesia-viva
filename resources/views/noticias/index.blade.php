@@ -43,7 +43,18 @@
                             <td class="border px-4 py-2 text-gray-900 dark:text-black text-center">{{ $noticia->titulo }}</td>
                             <td class="border px-4 py-2 text-gray-900 dark:text-black text-center">{{ $noticia->slug }}</td>
                             <td class="border px-4 py-2 text-gray-900 dark:text-black text-center"><img src="/imagen/{{$noticia->imagen}}" onerror="this.src='/imagen/fiel.png';" ></td><!-- en caso de error se carga una imagen por defecto -->
-                            <td class="border px-4 py-2 text-gray-900 dark:text-black text-center">{{ $noticia->activo }}</td>
+                            <td class="border px-4 py-2 text-gray-900 dark:text-black text-center">
+                                @if ($noticia->activo == 1)
+                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+                                    <path fill="#c8e6c9" d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"></path><path fill="#4caf50" d="M34.586,14.586l-13.57,13.586l-5.602-5.586l-2.828,2.828l8.434,8.414l16.395-16.414L34.586,14.586z"></path>
+                                    </svg>
+                                @endif
+                                @if ($noticia->activo == 0)
+                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+                                    <path fill="#f44336" d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"></path><path fill="#fff" d="M29.656,15.516l2.828,2.828l-14.14,14.14l-2.828-2.828L29.656,15.516z"></path><path fill="#fff" d="M32.484,29.656l-2.828,2.828l-14.14-14.14l2.828-2.828L32.484,29.656z"></path>
+                                    </svg>
+                                @endif
+                            </td>
                             <td class="border px-4 py-2 text-gray-900 dark:text-black text-center">{{ $noticia->user->name }}</td>
                             <td class="border px-4 py-2 text-gray-900 dark:text-black text-center">{{ date('d/m/Y',strtotime("$noticia->updated_at")) }}</td>
                             <td class="border px-4 py-2 text-center">

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Noticia;
+use GuzzleHttp\Psr7\Response;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 
@@ -61,7 +63,17 @@ class PageController extends Controller
 
     }
 
-    public function inicio(){
-        return view('paginas.index');
+    public function inicio(Request $request){
+        $noticias = Noticia::where('activo', 1)->orderBy('updated_at', 'desc')->paginate(4);
+        if ($request->ajax()) {
+            $view = view('paginas.noticias', compact('noticias'))->render();
+            return response()->Json(['view' => $view, 'nextPageUrl' => $noticias->nextPageUrl()]);
+        }
+        return view('paginas.index',compact('noticias'));
+    }
+
+    public function noticia(String $id){
+        $noticia = Noticia::find($id);
+        return view('paginas.noticia',compact('noticia'));
     }
 }

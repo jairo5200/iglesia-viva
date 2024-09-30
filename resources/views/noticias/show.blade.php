@@ -16,7 +16,7 @@
                 <div class="mb-5 row">
                     <div class="col-sm">
                         <label  class="block mb-4 text-xl font-medium text-gray-900 dark:text-black">Activa</label>
-                        <label  class="block mb-4 text-l font-medium text-gray-800 dark:text-black">{{ ($noticia->activo == 1) ? "Si" : "no" }}</label>
+                        <label  class="block mb-4 text-l font-medium text-gray-800 dark:text-black">{{ ($noticia->activo == 1) ? "Si" : "No" }}</label>
                         <div class="col-sm">
                             <div class="grid grid-cols-1 mt-5">
                             <label class="block mb-4 text-xl font-medium text-gray-900 dark:text-black">Imagen</label>

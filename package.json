@@ -17,6 +17,7 @@
     },
     "dependencies": {
         "alertifyjs": "^1.13.1",
-        "ckeditor5": "^43.1.0"
+        "ckeditor5": "^43.1.0",
+        "tinymce": "^6.8.4"
     }
 }

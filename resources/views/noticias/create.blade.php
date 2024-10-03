@@ -120,7 +120,7 @@
     selector: 'textarea#descripcion', // Replace this CSS selector to match the placeholder element for TinyMCE
     height: 800,
     plugins: 'code table lists image link',
-    toolbar: 'undo redo | blocks | forecolor fontfamily | bold italic underline | alignleft aligncenter alignright | indent outdent | bullist numlist | code | table | image | link'
+    toolbar: 'undo redo | forecolor fontfamily | bold italic underline | alignleft aligncenter alignright | indent outdent | bullist numlist | code | table | image | link'
 
   });
 

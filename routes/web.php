@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\DepartamentoController;
 use App\Http\Controllers\EscuelaController;
 use App\Http\Controllers\FielController;
@@ -37,6 +38,10 @@ Route::controller(PageController::class)->group(function (){
     Route::get('/noticia/{id}', 'noticia')->name('noticia');
     //enrutamiento hacia la pagina dashboard
     Route::get('/dashboard', 'dashboard')->name('dashboard');
+    //enrutamiento hacia la pagina que lista los blogs
+    Route::get('/listablogs', 'blogsPagina')->name('blogsPagina');
+    //enrutamiento hacia la pagina de cada blog
+    Route::get('/blog/{id}', 'blog')->name('blog');
 
 });
 
@@ -57,6 +62,7 @@ Route::middleware([
     Route::resource('fiels', FielController::class);// ruta para el controllador de fiel
     Route::resource('escuelas', EscuelaController::class);// ruta para el controllador de escuela
     Route::resource('noticias', NoticiaController::class);// ruta para el controllador de noticia
+    Route::resource('blogs', BlogController::class);// ruta para el controllador de blog
 });
 
 

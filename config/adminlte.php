@@ -317,6 +317,11 @@ return [
 
         ],
         [
+            'text' => 'Blogs',
+            'route' => 'blogs.index',
+
+        ],
+        [
             'text' => 'Usuarios',
             'route' => 'users.index',
 

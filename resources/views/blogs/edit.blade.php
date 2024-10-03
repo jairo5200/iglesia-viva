@@ -6,7 +6,7 @@
 
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Editar Noticia') }}
+            {{ __('Editar Blog') }}
         </h2>
     </x-slot>
 
@@ -14,15 +14,15 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg p-6 lg:p-8">
-                <form method="POST" action="{{ route('noticias.update', $noticia)}}" class="formulario-actualizar" id="formulario-actualizar" enctype="multipart/form-data">
+                <form method="POST" action="{{ route('blogs.update', $blog)}}" class="formulario-actualizar" id="formulario-actualizar" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                     <div class="mb-5 row">
                         <div class="col-sm">
                         <label for="titulo" class="block mb-2 text-l font-medium text-gray-900 dark:text-black">Titulo</label>
-                        <input type="text" name="titulo" id="titulo" oninput="convertToSlug()" value="{{ old('titulo', $noticia->titulo ) }}" class=" border border-gray-300 text-gray-900 text-m rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:text-Black dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                        <input type="text" name="titulo" id="titulo" oninput="convertToSlug()" value="{{ old('titulo', $blog->titulo ) }}" class=" border border-gray-300 text-gray-900 text-m rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:text-Black dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
                         <label for="slug" class="block mb-2 text-l font-medium text-gray-900 dark:text-black">Slug</label>
-                        <input type="text" readonly name="slug" id="slug" value="{{ old('slug', $noticia->slug ) }}" class=" border border-gray-300 text-gray-900 text-m rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:text-Black dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                        <input type="text" readonly name="slug" id="slug" value="{{ old('slug', $blog->slug ) }}" class=" border border-gray-300 text-gray-900 text-m rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:text-Black dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
                         <div class="row mt-2 ml-2">
                         <label class="mr-3 mt-1" >Activo</label>
                             <label class="switch">
@@ -46,17 +46,17 @@
                                 </div>
                         </div>
                             <div class="grid grid-cols-1 mt-5 mx-7">
-                                <img src="/imagen/{{$noticia->imagen}}" id="imagenSeleccionada" style="max-height: 400px; max-width: 500px;">
+                                <img src="/imagen/{{$blog->imagen}}" id="imagenSeleccionada" style="max-height: 400px; max-width: 500px;">
                             </div>
                     </div>
 
                     </div>
                         <label for="descripcion" class="block mb-2 text-l font-medium text-gray-900 dark:text-black">Descripcion</label>
-                        <textarea id="descripcion" name="descripcion">{{$noticia->descripcion}}</textarea>
+                        <textarea id="descripcion" name="descripcion">{{$blog->descripcion}}</textarea>
                         <div class="col mt-4">
                             <input type="hidden" name="user_id" id="user_id" value="{{auth()->user()->id}}">
-                            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mb-2">Actualizar Noticia</button>
-                            <a href="{{ route('noticias.index')}}" class="text-white bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:outline-none focus:ring-slate-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-slate-600 dark:hover:bg-slate-700 dark:focus:ring-slate-800 mb-2">Cancelar</a>
+                            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mb-2">Actualizar Blog</button>
+                            <a href="{{ route('blogs.index')}}" class="text-white bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:outline-none focus:ring-slate-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-slate-600 dark:hover:bg-slate-700 dark:focus:ring-slate-800 mb-2">Cancelar</a>
                         </div>
                 </form>
             </div>

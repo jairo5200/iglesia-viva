@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use App\Models\Noticia;
 use GuzzleHttp\Psr7\Response;
 use Illuminate\Contracts\Session\Session;
@@ -75,5 +76,19 @@ class PageController extends Controller
     public function noticia(String $id){
         $noticia = Noticia::find($id);
         return view('paginas.noticia',compact('noticia'));
+    }
+
+    public function blogsPagina(Request $request){
+        $blogs = Blog::where('activo', 1)->orderBy('updated_at', 'desc')->paginate(6);
+        if ($request->ajax()) {
+            $view = view('paginas.datablogs', compact('blogs'))->render();
+            return response()->Json(['view' => $view, 'nextPageUrl' => $blogs->nextPageUrl()]);
+        }
+        return view('paginas.blogs',compact('blogs'));
+    }
+
+    public function blog(String $id){
+        $blog = Blog::find($id);
+        return view('paginas.blog',compact('blog'));
     }
 }

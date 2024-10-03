@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Noticia;
+use App\Models\Blog;
 use Illuminate\Http\Request;
 
-class NoticiaController extends Controller
+class BlogController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $noticias = Noticia::orderBy('updated_at', 'desc')->get();
-        return view('noticias.index', compact('noticias'));
+        $blogs = Blog::orderBy('updated_at', 'desc')->get();
+        return view('blogs.index', compact('blogs'));
     }
 
     /**
@@ -21,7 +21,7 @@ class NoticiaController extends Controller
      */
     public function create()
     {
-        return view('noticias.create');
+        return  view('blogs.create');
     }
 
     /**
@@ -46,15 +46,15 @@ class NoticiaController extends Controller
 
             ]);
         }
-        $noticia = $request->all();
+        $blog = $request->all();
         if ($imagen = $request->file('imagen')) {
             $rutaGuardarImg = 'imagen/';
-            $imagenNoticia = date('YmdHis').".".$imagen->getClientOriginalExtension();
-            $imagen->move($rutaGuardarImg,$imagenNoticia);
-            $noticia['imagen'] = "$imagenNoticia";
+            $imagenBlog = date('YmdHis').".".$imagen->getClientOriginalExtension();
+            $imagen->move($rutaGuardarImg,$imagenBlog);
+            $blog['imagen'] = "$imagenBlog";
         }
-        Noticia::create($noticia);
-        return redirect()->route('noticias.index');
+        Blog::create($blog);
+        return redirect()->route('blogs.index');
     }
 
     /**
@@ -62,8 +62,8 @@ class NoticiaController extends Controller
      */
     public function show(string $id)
     {
-        $noticia = Noticia::find($id);
-        return view('noticias.show', compact('noticia'));
+        $blog = Blog::find($id);
+        return view('blogs.show', compact('blog'));
     }
 
     /**
@@ -71,8 +71,8 @@ class NoticiaController extends Controller
      */
     public function edit(string $id)
     {
-        $noticia = Noticia::find($id);
-        return view('noticias.edit', compact('noticia'));
+        $blog = Blog::find($id);
+        return view('blogs.edit', compact('blog'));
     }
 
     /**
@@ -97,21 +97,21 @@ class NoticiaController extends Controller
 
             ]);
         }
-        $noticia = Noticia::find($id);
-        $noticiaCambio = $request->all();
+        $blog = Blog::find($id);
+        $blogCambio = $request->all();
 
         $rutaGuardarImagen = 'imagen/';
         if($imagen = $request->file('imagen')) {
-            $ruta = $rutaGuardarImagen.$noticia['imagen'];
-            if($noticia['imagen'] != null){
+            $ruta = $rutaGuardarImagen.$blog['imagen'];
+            if($blog['imagen'] != null){
             unlink($ruta); // con este código se elimina la foto de la carpeta
             }
-            $imagenNoticia = date('YmdHis'). "." . $imagen->getClientOriginalExtension();
-            $imagen->move($rutaGuardarImagen, $imagenNoticia);
-            $noticiaCambio['imagen'] = "$imagenNoticia";
+            $imagenblog = date('YmdHis'). "." . $imagen->getClientOriginalExtension();
+            $imagen->move($rutaGuardarImagen, $imagenblog);
+            $blogCambio['imagen'] = "$imagenblog";
         }
-        $noticia->update($noticiaCambio);
-        return redirect()->route('noticias.index')->with('info', 'Noticia actualizada con exito');
+        $blog->update($blogCambio);
+        return redirect()->route('blogs.index')->with('info', 'Blog actualizado con exito');
     }
 
     /**
@@ -119,13 +119,12 @@ class NoticiaController extends Controller
      */
     public function destroy(string $id)
     {
-        $noticia = Noticia::find($id);
-        $rutaGuardarImagen = 'imagen/';
-        if ($noticia->imagen != null) {// se verifica que la noticia tenga foto.
-            $ruta = $rutaGuardarImagen.$noticia['imagen'];
-            unlink($ruta);  // con este código se elimina la foto de la carpeta.
+        $blog = Blog::find($id);
+        $rutaEliminarImagen = 'imagen/';
+        if($blog['imagen'] != null){
+            unlink($rutaEliminarImagen.$blog['imagen']); // con este código se elimina la foto
         }
-        $noticia->delete();
-        return redirect()->route('noticias.index')->with('info', 'Noticia eliminada con exito');
+        $blog->delete();
+        return redirect()->route('blogs.index')->with('info', 'Blog eliminado con exito');
     }
 }

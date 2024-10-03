@@ -48,10 +48,11 @@
     </a>
     <div class="flex items-center space-x-1">
       <div class="hidden space-x-1 md:inline-flex">
-        <a href="#" class="px-2 lg:px-6 py-6 text-m border-b-2 border-transparent hover:border-orange-600 leading-[22px] md:px-3 text-gray-500 hover:text-orange-500">Inicio</a>
+        <a href="{{route('inicio')}}" class="px-2 lg:px-6 py-6 text-m border-b-2 border-transparent hover:border-orange-600 leading-[22px] md:px-3 text-gray-500 hover:text-orange-500">Inicio</a>
         <a href="#" class="px-2 lg:px-6 py-6 text-m border-b-2 border-transparent hover:border-orange-600 leading-[22px] md:px-3 text-gray-500 hover:text-orange-500">Nosotros</a>
         <a href="#" class="px-2 lg:px-6 py-6 text-m border-b-2 border-transparent hover:border-orange-600 leading-[22px] md:px-3 text-gray-500 hover:text-orange-500">Ritos</a>
         <a href="#" class="px-2 lg:px-6 py-6 text-m border-b-2 border-transparent hover:border-orange-600 leading-[22px] md:px-3 text-gray-500 hover:text-orange-500">Company</a>
+        <a href="{{route('blogsPagina')}}" class="px-2 lg:px-6 py-6 text-m border-b-2 border-transparent hover:border-orange-600 leading-[22px] md:px-3 text-gray-500 hover:text-orange-500">Blogs</a>
         <a href="#" class="px-2 lg:px-6 py-6 text-m border-b-2 border-transparent hover:border-orange-600 leading-[22px] md:px-3 text-gray-500 hover:text-orange-500">Donde estamos ubicados</a>
       </div>
       @if (Route::has('login'))
@@ -99,10 +100,11 @@
             </svg>
             <span class="sr-only">Close Menu</span>
           </button>
-          <a href="#" class="px-2 lg:px-6 py-6 text-sm border-b-2 border-transparent hover:border-orange-600 leading-[22px] md:px-3 text-gray-500 hover:text-orange-500">Inicio</a>
+          <a href="{{route('inicio')}}" class="px-2 lg:px-6 py-6 text-sm border-b-2 border-transparent hover:border-orange-600 leading-[22px] md:px-3 text-gray-500 hover:text-orange-500">Inicio</a>
           <a href="#" class="px-2 lg:px-6 py-6 text-sm border-b-2 border-transparent hover:border-orange-600 leading-[22px] md:px-3 text-gray-500 hover:text-orange-500">Nosotros</a>
           <a href="#" class="px-2 lg:px-6 py-6 text-sm border-b-2 border-transparent hover:border-orange-600 leading-[22px] md:px-3 text-gray-500 hover:text-orange-500">Ritos</a>
           <a href="#" class="px-2 lg:px-6 py-6 text-sm border-b-2 border-transparent hover:border-orange-600 leading-[22px] md:px-3 text-gray-500 hover:text-orange-500">Company</a>
+          <a href="{{route('blogsPagina')}}" class="px-2 lg:px-6 py-6 text-sm border-b-2 border-transparent hover:border-orange-600 leading-[22px] md:px-3 text-gray-500 hover:text-orange-500">Blogs</a>
           <a href="#" class="px-2 lg:px-6 py-6 text-sm border-b-2 border-transparent hover:border-orange-600 leading-[22px] md:px-3 text-gray-500 hover:text-orange-500">Donde estamos ubicados</a>
         </div>
       </div>

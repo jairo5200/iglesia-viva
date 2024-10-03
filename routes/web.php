@@ -5,6 +5,7 @@ use App\Http\Controllers\DepartamentoController;
 use App\Http\Controllers\EscuelaController;
 use App\Http\Controllers\FielController;
 use App\Http\Controllers\IglesiaController;
+use App\Http\Controllers\InformeController;
 use App\Http\Controllers\MunicipioController;
 use App\Http\Controllers\NoticiaController;
 use App\Http\Controllers\PageController;
@@ -63,6 +64,7 @@ Route::middleware([
     Route::resource('escuelas', EscuelaController::class);// ruta para el controllador de escuela
     Route::resource('noticias', NoticiaController::class);// ruta para el controllador de noticia
     Route::resource('blogs', BlogController::class);// ruta para el controllador de blog
+    Route::resource('informes', InformeController::class);// ruta para el controllador de Informe
 });
 
 

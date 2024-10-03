@@ -351,6 +351,11 @@ return [
             'icon' => 'fas fa-fw fa-users',
 
         ],
+        [
+            'text' => 'Informe',
+            'route' => 'informes.index',
+
+        ],
 /*         [
             'text' => 'pages',
             'url' => 'admin/pages',

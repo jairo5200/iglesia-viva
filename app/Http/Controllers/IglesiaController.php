@@ -43,7 +43,7 @@ class IglesiaController extends Controller
 
         Iglesia::create($request->all());
 
-        return redirect()->route('iglesias.index');
+        return redirect()->route('iglesias.index')->with('success', 'Iglesia creada con éxito');
     }
 
     /**
@@ -78,7 +78,7 @@ class IglesiaController extends Controller
         $iglesia = Iglesia::findOrFail($id);
         $iglesia->update($request->all());
 
-        return redirect()->route('iglesias.index');
+        return redirect()->route('iglesias.index')->with('success', 'Iglesia actualizada con éxito');
     }
 
     /**
@@ -89,6 +89,6 @@ class IglesiaController extends Controller
         $iglesia = Iglesia::findOrFail($id);
         $iglesia->delete();
 
-        return redirect()->route('iglesias.index');
+        return redirect()->route('iglesias.index')->with('success', 'Iglesia eliminada con éxito');
     }
 }

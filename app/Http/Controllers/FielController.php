@@ -89,7 +89,7 @@ class FielController extends Controller
 
         Fiel::create($fiel);
 
-        return redirect()->route('fiels.index');
+        return redirect()->route('fiels.index')->with('success', 'Fiel creado con éxito');
     }
 
     /**
@@ -174,7 +174,7 @@ class FielController extends Controller
 
 
         $fiel->update($fiele);
-        return redirect()->route('fiels.index');
+        return redirect()->route('fiels.index')->with('success', 'Fiel actualizado con éxito');
     }
 
     /**
@@ -191,6 +191,6 @@ class FielController extends Controller
 
         $fiel->delete();
 
-        return redirect()->route('fiels.index');
+        return redirect()->route('fiels.index')->with('success', 'Fiel eliminado con éxito');
     }
 }

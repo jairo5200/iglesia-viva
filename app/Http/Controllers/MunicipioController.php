@@ -44,7 +44,7 @@ class MunicipioController extends Controller
 
         Municipio::create($request->all());
 
-        return redirect()->route('municipios.index');
+        return redirect()->route('municipios.index')->with('success', 'Municipio creado con éxito');
     }
 
     /**
@@ -78,7 +78,7 @@ class MunicipioController extends Controller
         $municipio = Municipio::findOrFail($id);
         $municipio->update($request->all());
 
-        return redirect()->route('municipios.index');
+        return redirect()->route('municipios.index')->with('success', 'Municipio actualizado con éxito');
     }
 
     /**
@@ -89,6 +89,6 @@ class MunicipioController extends Controller
         $municipio = Municipio::findOrFail($id);
         $municipio->delete();
 
-        return redirect()->route('municipios.index');
+        return redirect()->route('municipios.index')->with('success', 'Municipio eliminado con éxito');
     }
 }

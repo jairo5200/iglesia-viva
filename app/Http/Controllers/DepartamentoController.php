@@ -41,7 +41,7 @@ class DepartamentoController extends Controller
 
             Departamento::create($request->all());
 
-            return redirect()->route('departamentos.index');
+            return redirect()->route('departamentos.index')->with('success', 'Departamento creado con éxito');
     }
 
     /**
@@ -74,7 +74,7 @@ class DepartamentoController extends Controller
         $departamento = Departamento::findOrFail($id);
         $departamento->update($request->all());
 
-        return redirect()->route('departamentos.index');
+        return redirect()->route('departamentos.index')->with('success', 'Departamento actualizado con éxito');
     }
 
     /**
@@ -85,6 +85,6 @@ class DepartamentoController extends Controller
         $departamento = Departamento::findOrFail($id);
         $departamento->delete();
 
-        return redirect()->route('departamentos.index');
+        return redirect()->route('departamentos.index')->with('success', 'Departamento eliminado con éxito');
     }
 }

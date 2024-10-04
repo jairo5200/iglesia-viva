@@ -54,7 +54,7 @@ class BlogController extends Controller
             $blog['imagen'] = "$imagenBlog";
         }
         Blog::create($blog);
-        return redirect()->route('blogs.index');
+        return redirect()->route('blogs.index')->with('success', 'Blog creado con éxito');
     }
 
     /**
@@ -111,7 +111,7 @@ class BlogController extends Controller
             $blogCambio['imagen'] = "$imagenblog";
         }
         $blog->update($blogCambio);
-        return redirect()->route('blogs.index')->with('info', 'Blog actualizado con exito');
+        return redirect()->route('blogs.index')->with('success', 'Blog actualizado con exito');
     }
 
     /**
@@ -125,6 +125,6 @@ class BlogController extends Controller
             unlink($rutaEliminarImagen.$blog['imagen']); // con este código se elimina la foto
         }
         $blog->delete();
-        return redirect()->route('blogs.index')->with('info', 'Blog eliminado con exito');
+        return redirect()->route('blogs.index')->with('success', 'Blog eliminado con exito');
     }
 }

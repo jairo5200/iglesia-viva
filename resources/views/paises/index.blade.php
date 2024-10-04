@@ -96,4 +96,17 @@
 
     </script>
 
+
+    @if(Session::has('success'))
+    <script>
+        // Muestra la alerta con SweetAlert
+        Swal.fire({
+            icon: 'success',
+            title: '¡Éxito!',
+            text: "{{ Session::get('success') }}",
+            });
+
+    </script>
+    @endif
+
 @endsection

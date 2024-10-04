@@ -54,7 +54,7 @@ class NoticiaController extends Controller
             $noticia['imagen'] = "$imagenNoticia";
         }
         Noticia::create($noticia);
-        return redirect()->route('noticias.index');
+        return redirect()->route('noticias.index')->with('success', 'Noticia creada con éxito');
     }
 
     /**
@@ -111,7 +111,7 @@ class NoticiaController extends Controller
             $noticiaCambio['imagen'] = "$imagenNoticia";
         }
         $noticia->update($noticiaCambio);
-        return redirect()->route('noticias.index')->with('info', 'Noticia actualizada con exito');
+        return redirect()->route('noticias.index')->with('success', 'Noticia actualizada con exito');
     }
 
     /**
@@ -126,6 +126,6 @@ class NoticiaController extends Controller
             unlink($ruta);  // con este código se elimina la foto de la carpeta.
         }
         $noticia->delete();
-        return redirect()->route('noticias.index')->with('info', 'Noticia eliminada con exito');
+        return redirect()->route('noticias.index')->with('success', 'Noticia eliminada con exito');
     }
 }

@@ -64,6 +64,6 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $user->delete();
 
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->with('success', 'Usuario eliminado con éxito');
     }
 }

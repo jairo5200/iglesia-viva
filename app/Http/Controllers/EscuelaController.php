@@ -37,7 +37,7 @@ class EscuelaController extends Controller
         $escuelas = Escuela::where('fiel_id', $id)->orderBy('fecha_inicio', 'asc')->get();
         $escuela = $request->all();
         Escuela::create($escuela);
-        return redirect()->route('fiels.show', compact('fiel','escuelas'));
+        return redirect()->route('fiels.show', compact('fiel','escuelas'))->with('success', 'Escuela creada con éxito');
     }
 
     /**
@@ -66,7 +66,7 @@ class EscuelaController extends Controller
         $fiel = Fiel::findOrFail($fiel_id);
         $escuela = $request->all();
         Escuela::findOrFail($id)->update($escuela);
-        return redirect()->route('fiels.show', compact('fiel'));
+        return redirect()->route('fiels.show', compact('fiel'))->with('success', 'Escuela actualizada con éxito');
     }
 
     /**
@@ -77,6 +77,6 @@ class EscuelaController extends Controller
         $escuela = Escuela::findOrFail($id);
         $fiel = Fiel::findOrFail($escuela->fiel_id);
         Escuela::findOrFail($id)->delete();
-        return redirect()->route('fiels.show', compact('fiel'));
+        return redirect()->route('fiels.show', compact('fiel'))->with('success', 'Escuela eliminada con éxito');
     }
 }

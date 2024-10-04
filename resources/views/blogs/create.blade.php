@@ -127,4 +127,17 @@
 </script>
 
 
+@if($errors->any())
+    <script>
+        // Muestra la alerta de error con SweetAlert
+        Swal.fire({
+            icon: 'error',
+            title: '¡Error!',
+            text: "{{$errors->first()}}",
+            });
+
+    </script>
+    @endif
+
+
 @endsection

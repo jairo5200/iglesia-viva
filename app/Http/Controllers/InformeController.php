@@ -53,7 +53,7 @@ class InformeController extends Controller
     public function show(string $id)
     {
         $informe = Informe::find($id);
-        return view('informe.show', compact('informe'));
+        return view('informes.show', compact('informe'));
     }
 
     /**

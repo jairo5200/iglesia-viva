@@ -46,12 +46,12 @@
                                 <form method="POST" action="{{ route('informes.destroy', $informe->id) }}" class="formulario-eliminar">
                                 @csrf
                                 @method('DELETE')
-                                    <div class="mx-auto inline-block">
-                                        <a href="{{ route('informes.show', $informe->id) }}" class="bg-green-500 dark:bg-green-700 hover:bg-green-600 dark:hover:bg-green-800 uppercase text-white font-bold  py-2.5 px-6 rounded my-5 ">Ver</a>
-                                        <a href="{{ route('informes.edit', $informe->id) }}" class="bg-blue-500 dark:bg-blue-700 hover:bg-blue-600 dark:hover:bg-blue-800 uppercase text-white font-bold  py-2.5 px-6 rounded mr-2 my-5 ">Editar</a>
-                                        <button class="inline-block rounded mt-3 bg-danger px-6 pb-2 pt-2.5 text-white text-s font-bold uppercase leading-normal text-white shadow-danger-3 transition duration-150 ease-in-out hover:bg-danger-accent-300 hover:shadow-danger-2 focus:bg-danger-accent-300 focus:shadow-danger-2 focus:outline-none focus:ring-0 active:bg-danger-600 active:shadow-danger-2 motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong rounded-full"
-                                        type="submit" >Eliminar</button></td>
-                                    </div>
+                                <div class="mx-auto inline-block">
+                                    <a href="{{ route('informes.show', $informe->id) }}" class="bg-green-500 dark:bg-green-700 hover:bg-green-600 dark:hover:bg-green-800 uppercase text-white font-bold  py-2.5 px-6 rounded my-5 ">Ver</a>
+                                    <a href="{{ route('informes.edit', $informe->id) }}" class="bg-blue-500 dark:bg-blue-700 hover:bg-blue-600 dark:hover:bg-blue-800 uppercase text-white font-bold  py-2.5 px-6 rounded mr-2 my-5 ">Editar</a>
+                                    <button class="inline-block rounded mt-3 bg-danger px-6 pb-2 pt-2.5 text-white text-s font-bold uppercase leading-normal text-white shadow-danger-3 transition duration-150 ease-in-out hover:bg-danger-accent-300 hover:shadow-danger-2 focus:bg-danger-accent-300 focus:shadow-danger-2 focus:outline-none focus:ring-0 active:bg-danger-600 active:shadow-danger-2 motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong rounded-full"
+                                    type="submit" >Eliminar</button></td>
+                                </div>
                                 </form>
                         </tr>
                     @endforeach
@@ -102,16 +102,20 @@
         });
 
 
-        // Verifica si hay un mensaje de éxito
-        if (window.Laravel.flash.success) {
-        // Muestra la alerta con SweetAlert
-            Swal.fire({
-                icon: 'success',
-                title: '¡Éxito!',
-                text: window.Laravel.flash.success,
-            });
-        }
 
     </script>
+
+
+@if(Session::has('success'))
+<script>
+    // Muestra la alerta con SweetAlert
+    Swal.fire({
+        icon: 'success',
+        title: '¡Éxito!',
+        text: "{{ Session::get('success') }}",
+        });
+
+</script>
+@endif
 
 @endsection

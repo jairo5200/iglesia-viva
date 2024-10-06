@@ -12,7 +12,9 @@ class PaisController extends Controller
      */
     public function index()
     {
+        // obtenemos la lista de paises
         $paises = Pais::all();
+        // retornamos la vista con la lista de paises
         return view('paises.index',compact('paises'));
     }
 
@@ -21,6 +23,7 @@ class PaisController extends Controller
      */
     public function create()
     {
+        // retornamos la vista para crear un nuevo país
         return view('paises.create');
     }
 
@@ -29,12 +32,13 @@ class PaisController extends Controller
      */
     public function store(Request $request)
     {
+        // validamos los datos del formulario
         $request->validate([
             'name' => 'required|string|max:100',
         ]);
-
+        // creamos un nuevo país
         Pais::create($request->all());
-
+        // redireccionamos a la lista de países
         return redirect()->route('paises.index')->with('success', 'Pais creado con éxito');
     }
 
@@ -51,7 +55,9 @@ class PaisController extends Controller
      */
     public function edit(string $id)
     {
+        // obtenemos el país a editar
         $pais = Pais::findOrFail($id);
+        // retornamos la vista para editar el país
         return view('paises.edit', compact('pais'));
     }
 
@@ -60,13 +66,15 @@ class PaisController extends Controller
      */
     public function update(Request $request, string $id)
     {
+         // validamos los datos del formulario
         $request->validate([
             'name' => 'required|string|max:100',
         ]);
-
+        // obtenemos el país a editar
         $pais = Pais::findOrFail($id);
+        // actualizamos el país
         $pais->update($request->all());
-
+        // redireccionamos a la lista de países
         return redirect()->route('paises.index')->with('success', 'Pais actualizado con éxito');
     }
 
@@ -75,9 +83,11 @@ class PaisController extends Controller
      */
     public function destroy(string $id)
     {
+        // obtenemos el país a eliminar
         $pais = Pais::findOrFail($id);
+        // eliminamos el país
         $pais->delete();
-
+        // redireccionamos a la lista de países
         return redirect()->route('paises.index')->with('success', 'Pais eliminado con éxito');
     }
 }

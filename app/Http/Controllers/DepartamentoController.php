@@ -16,8 +16,11 @@ class DepartamentoController extends Controller
      */
     public function index()
     {
+        // guarda en la variable todos los departamentos
         $departamentos = Departamento::all();
+        // guarda en la variable todos los paises
         $paises = Pais::all();
+        // devuelve la vista con la lista de departamentos y paises
         return view('departamentos.index',compact('departamentos','paises'));
     }
 
@@ -26,7 +29,9 @@ class DepartamentoController extends Controller
      */
     public function create()
     {
+        // guarda en la variable todos los paises
         $paises = Pais::all();
+        // devuelve la vista con el formulario para crear un nuevo Departamento
         return view('departamentos.create',compact('paises'));
     }
 
@@ -35,12 +40,14 @@ class DepartamentoController extends Controller
      */
     public function store(Request $request)
     {
+        // validamos los parametros del request
             $request->validate([
                 'name' => 'required|string|max:100',
             ]);
 
+            // creamos un nuevo Departamento
             Departamento::create($request->all());
-
+            // redireccionamos a la vista de la lista de Departamentos
             return redirect()->route('departamentos.index')->with('success', 'Departamento creado con éxito');
     }
 
@@ -57,8 +64,11 @@ class DepartamentoController extends Controller
      */
     public function edit(string $id)
     {
+        // busca el Departamento especifico
         $departamento = Departamento::findOrFail($id);
+        // busca todos los paises
         $paises = Pais::all();
+        // devuelve la vista con el formulario para editar el Departamento
         return view('departamentos.edit', compact('departamento','paises'));
     }
 
@@ -67,13 +77,15 @@ class DepartamentoController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        // validamos los parametros del request
         $request->validate([
             'name' => 'required|string|max:100',
         ]);
-
+        // busca el Departamento especifico
         $departamento = Departamento::findOrFail($id);
+        // actualiza la informacion del Departamento
         $departamento->update($request->all());
-
+        // redireccionamos a la vista de la lista de Departamentos
         return redirect()->route('departamentos.index')->with('success', 'Departamento actualizado con éxito');
     }
 
@@ -82,9 +94,11 @@ class DepartamentoController extends Controller
      */
     public function destroy(string $id)
     {
+        // busca el Departamento especifico
         $departamento = Departamento::findOrFail($id);
+        // elimina el Departamento
         $departamento->delete();
-
+        // redireccionamos a la vista de la lista de Departamentos
         return redirect()->route('departamentos.index')->with('success', 'Departamento eliminado con éxito');
     }
 }

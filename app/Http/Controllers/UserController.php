@@ -12,7 +12,9 @@ class UserController extends Controller
      */
     public function index()
     {
+        // obtenemos la lista de usuarios
          $users = User::all();
+         // retornamos la vista con la lista de usuarios
          return view('users.index', compact('users'));
     }
 
@@ -61,9 +63,11 @@ class UserController extends Controller
      */
     public function destroy(string $id)
     {
+        // obtenemos el usuario a eliminar
         $user = User::findOrFail($id);
+        // eliminamos el usuario
         $user->delete();
-
+        // redireccionamos a la vista de usuarios
         return redirect()->route('users.index')->with('success', 'Usuario eliminado con éxito');
     }
 }

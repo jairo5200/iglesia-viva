@@ -40,18 +40,17 @@
     <body>
 
 
-    <header class="z-30 w-full px-2 py-4 bg-orange-800 sm:px-4 sticky top-0 shadow ">
+    <header class="z-30 w-full px-2 pb-3 bg-amber-400 sm:px-4 sticky top-0 shadow ">
   <div class="flex items-center justify-between mx-auto max-w-7xl">
     <a href="/" title="Kutty Home Page" class="flex items-center hover:text-orange-500">
-        <img src="/imagen/principal.png" style="max-height: 150px; max-width: 150px;" alt="Iglesia Viva">
-        <h1 class=" pb-3 ml-5 text-5xl font-extrabold " style="font-family: 'Scriptina', sans-serif;">Iglesia Viva</h1>
+        <img src="/imagen/principal.png" class="h-50 w-60" alt="Iglesia Viva">
     </a>
     <div class="flex items-center space-x-1">
       <div class="hidden space-x-1 md:inline-flex">
         <a href="{{route('inicio')}}" class="px-2 lg:px-6 py-6 text-m border-b-2 border-transparent hover:border-orange-600 leading-[22px] md:px-3 text-gray-500 hover:text-orange-500">Inicio</a>
         <a href="#" class="px-2 lg:px-6 py-6 text-m border-b-2 border-transparent hover:border-orange-600 leading-[22px] md:px-3 text-gray-500 hover:text-orange-500">Nosotros</a>
-        <a href="#" class="px-2 lg:px-6 py-6 text-m border-b-2 border-transparent hover:border-orange-600 leading-[22px] md:px-3 text-gray-500 hover:text-orange-500">Ritos</a>
-        <a href="#" class="px-2 lg:px-6 py-6 text-m border-b-2 border-transparent hover:border-orange-600 leading-[22px] md:px-3 text-gray-500 hover:text-orange-500">Company</a>
+        <a href="#" class="px-2 lg:px-6 py-6 text-m border-b-2 border-transparent hover:border-orange-600 leading-[22px] md:px-3 text-gray-500 hover:text-orange-500">Servicios</a>
+        <a href="#" class="px-2 lg:px-6 py-6 text-m border-b-2 border-transparent hover:border-orange-600 leading-[22px] md:px-3 text-gray-500 hover:text-orange-500">Escuelas de formacion ministerial</a>
         <a href="{{route('blogsPagina')}}" class="px-2 lg:px-6 py-6 text-m border-b-2 border-transparent hover:border-orange-600 leading-[22px] md:px-3 text-gray-500 hover:text-orange-500">Blogs</a>
         <a href="#" class="px-2 lg:px-6 py-6 text-m border-b-2 border-transparent hover:border-orange-600 leading-[22px] md:px-3 text-gray-500 hover:text-orange-500">Donde estamos ubicados</a>
       </div>
@@ -102,8 +101,8 @@
           </button>
           <a href="{{route('inicio')}}" class="px-2 lg:px-6 py-6 text-sm border-b-2 border-transparent hover:border-orange-600 leading-[22px] md:px-3 text-gray-500 hover:text-orange-500">Inicio</a>
           <a href="#" class="px-2 lg:px-6 py-6 text-sm border-b-2 border-transparent hover:border-orange-600 leading-[22px] md:px-3 text-gray-500 hover:text-orange-500">Nosotros</a>
-          <a href="#" class="px-2 lg:px-6 py-6 text-sm border-b-2 border-transparent hover:border-orange-600 leading-[22px] md:px-3 text-gray-500 hover:text-orange-500">Ritos</a>
-          <a href="#" class="px-2 lg:px-6 py-6 text-sm border-b-2 border-transparent hover:border-orange-600 leading-[22px] md:px-3 text-gray-500 hover:text-orange-500">Company</a>
+          <a href="#" class="px-2 lg:px-6 py-6 text-sm border-b-2 border-transparent hover:border-orange-600 leading-[22px] md:px-3 text-gray-500 hover:text-orange-500">Servicios</a>
+          <a href="#" class="px-2 lg:px-6 py-6 text-sm border-b-2 border-transparent hover:border-orange-600 leading-[22px] md:px-3 text-gray-500 hover:text-orange-500">Escuelas de formacion ministerial</a>
           <a href="{{route('blogsPagina')}}" class="px-2 lg:px-6 py-6 text-sm border-b-2 border-transparent hover:border-orange-600 leading-[22px] md:px-3 text-gray-500 hover:text-orange-500">Blogs</a>
           <a href="#" class="px-2 lg:px-6 py-6 text-sm border-b-2 border-transparent hover:border-orange-600 leading-[22px] md:px-3 text-gray-500 hover:text-orange-500">Donde estamos ubicados</a>
         </div>

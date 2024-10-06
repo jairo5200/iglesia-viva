@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * se crea la tabla blogs en la base de datos
      */
     public function up(): void
     {

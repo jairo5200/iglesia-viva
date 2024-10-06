@@ -29,15 +29,15 @@
                     <thead>
                         <tr class="container ">
                             <th class="px-4 py-2 text-gray-900 dark:text-black text-center">Numero de identificacion</th>
+                            <th class="px-4 py-2 text-gray-900 dark:text-black text-center">Fotografia</th>
                             <th class="px-4 py-2 text-gray-900 dark:text-black text-center">Nombre Completo</th>
                             <th class="px-4 py-2 text-gray-900 dark:text-black text-center">Fecha de Cumpleaños</th>
                             <th class="px-4 py-2 text-gray-900 dark:text-black text-center">Telefono</th>
                             <th class="px-4 py-2 text-gray-900 dark:text-black text-center">Direccion</th>
                             <th class="px-4 py-2 text-gray-900 dark:text-black text-center">Fecha de ingreso</th>
-                            <th class="px-4 py-2 text-gray-900 dark:text-black text-center">Cargo</th>
+                            <th class="px-4 py-2 text-gray-900 dark:text-black text-center">Ocupacion y empresa</th>
                             <th class="px-4 py-2 text-gray-900 dark:text-black text-center">Escuela Actual</th>
-                            <th class="px-4 py-2 text-gray-900 dark:text-black text-center">Fotografia</th>
-                            <th class="px-4 py-2 text-gray-900 dark:text-black text-center">Iglesia</th>
+                            <th class="px-4 py-2 text-gray-900 dark:text-black text-center">Sede o Altar</th>
                             <th class="px-4 py-2 text-gray-900 dark:text-black text-center">Opciones</th>
                         </tr>
                     </thead>
@@ -46,6 +46,7 @@
 
                         <tr>
                             <td class="border px-4 py-2 text-gray-900 dark:text-black text-center">{{ $fiel->id_documento }}</td>
+                            <td class="border px-4 py-2 text-gray-900 dark:text-black text-center"><img src="/imagen/{{$fiel->imagen}}" onerror="this.src='/imagen/fiel.png';" ></td><!-- en caso de error se carga una imagen por defecto -->
                             <td class="border px-4 py-2 text-gray-900 dark:text-black text-center">{{ $fiel->name }}</td>
                             <td class="border px-4 py-2 text-gray-900 dark:text-black text-center">{{ date('d/F',strtotime("$fiel->fecha_de_nacimiento")) }}</td>
                             <td class="border px-4 py-2 text-gray-900 dark:text-black text-center">{{ $fiel->telefono }}</td>
@@ -53,7 +54,6 @@
                             <td class="border px-4 py-2 text-gray-900 dark:text-black text-center">{{ date('d/m/Y',strtotime("$fiel->fecha_de_ingreso")) }}</td>
                             <td class="border px-4 py-2 text-gray-900 dark:text-black text-center">{{ $fiel->cargo }}</td>
                             <td class="border px-4 py-2 text-gray-900 dark:text-black text-center">{{ $fiel->escuela_actual }}</td>
-                            <td class="border px-4 py-2 text-gray-900 dark:text-black text-center"><img src="/imagen/{{$fiel->imagen}}" onerror="this.src='/imagen/fiel.png';" ></td><!-- en caso de error se carga una imagen por defecto -->
                             <td class="border px-4 py-2 text-gray-900 dark:text-black text-center">{{$fiel->Iglesia->name}}</td>
                             <td class="border px-4 py-2 text-center flex">
                                 <form method="POST" action="{{route('fiels.destroy', $fiel->id)}}" class="formulario-eliminar mt-4">

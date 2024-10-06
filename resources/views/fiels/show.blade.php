@@ -29,11 +29,11 @@
                                 <label  class="block mb-4 text-l font-medium text-gray-800 dark:text-black">{{$fiel->direccion}}</label>
                                 <label  class="block mb-4 text-xl font-medium text-gray-900 dark:text-black">Fecha de ingreso</label>
                                 <label  class="block mb-4 text-l font-medium text-gray-800 dark:text-black">{{$fiel->fecha_de_ingreso}}</label>
-                                <label  class="block mb-4 text-xl font-medium text-gray-900 dark:text-black">Cargo</label>
+                                <label  class="block mb-4 text-xl font-medium text-gray-900 dark:text-black">Ocupacion y empresa</label>
                                 <label  class="block mb-4 text-l font-medium text-gray-800 dark:text-black">{{$fiel->cargo}}</label>
                                 <label  class="block mb-4 text-xl font-medium text-gray-900 dark:text-black">Escuela actual</label>
                                 <label  class="block mb-4 text-l font-medium text-gray-800 dark:text-black">{{$fiel->escuela_actual}}</label>
-                                <label  class="block mb-4 text-xl font-medium text-gray-900 dark:text-black">Sede o altar</label>
+                                <label  class="block mb-4 text-xl font-medium text-gray-900 dark:text-black">Sede o Altar</label>
                                 <label  class="block mb-4 text-l font-medium text-gray-800 dark:text-black">{{$fiel->Iglesia->name}}</label>
                                 </div>
                                 <div class="col-sm">

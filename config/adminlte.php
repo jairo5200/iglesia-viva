@@ -304,27 +304,30 @@ return [
         [
             'text' => 'Página',
             'route' => 'inicio',
-
+            'icon' => 'fas fa-fw fa-home',
         ],
         [
             'text' => 'Dashboard',
             'route' => 'dashboard',
+            'icon' => 'fas fa-fw fa-star',
 
         ],
         [
             'text' => 'Noticias',
             'route' => 'noticias.index',
+            'icon' => 'fas fa-fw fa-newspaper',
 
         ],
         [
             'text' => 'Blogs',
             'route' => 'blogs.index',
+            'icon' => 'fas fa-fw fa-bookmark',
 
         ],
         [
             'text' => 'Usuarios',
             'route' => 'users.index',
-
+            'icon' => 'fas fa-user-plus',
         ],
         [
             'text' => 'Países',
@@ -341,8 +344,9 @@ return [
 
         ],
         [
-            'text' => 'Iglesias',
+            'text' => 'Sede o Altar',
             'route' => 'iglesias.index',
+            'icon' => 'fas fa-fw fa-church',
 
         ],
         [
@@ -354,7 +358,7 @@ return [
         [
             'text' => 'Informe',
             'route' => 'informes.index',
-
+            'icon' => 'fas fa-fw fa-envelope',
         ],
 /*         [
             'text' => 'pages',
@@ -367,7 +371,7 @@ return [
         [
             'text' => 'Perfil',
             'route' => 'perfil',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fas  fa-user-cog',
         ],
         /* [
             'text' => 'change_password',

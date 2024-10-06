@@ -34,7 +34,7 @@
                                 <input type="text" name="direccion" id="direccion" class=" border border-gray-300 text-gray-900 text-m rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:text-Black dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
                                 <label for="fecha_de_ingreso" class="block mb-2 text-l font-medium text-gray-900 dark:text-black">Fecha de ingreso</label>
                                 <input type="date" name="fecha_de_ingreso" id="fecha_de_ingreso" class=" border border-gray-300 text-gray-900 text-m rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:text-Black dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-                                <label for="cargo" class="block mb-2 text-l font-medium text-gray-900 dark:text-black">Cargo</label>
+                                <label for="cargo" class="block mb-2 text-l font-medium text-gray-900 dark:text-black">Ocupacion y empresa</label>
                                 <input type="text" name="cargo" id="cargo" class=" border border-gray-300 text-gray-900 text-m rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:text-Black dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
                                 <label for="escuela_actual" class="block mb-2 text-l font-medium text-gray-900 dark:text-black">Escuela actual</label>
                                 <input type="text" name="escuela_actual" id="escuela_actual" class=" border border-gray-300 text-gray-900 text-m rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:text-Black dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
@@ -73,7 +73,7 @@
                                     <select id="municipio_id" class="bg-white-50 border border-gray-300 text-black text-m rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" name="municipio_id" onchange="loadIglesias(this)">
                                         <option>Selecciona un Municipio</option>
                                     </select>
-                                    <label for="iglesia_id" class="block mb-2 text-l font-medium text-gray-900 dark:text-black">Iglesia</label>
+                                    <label for="iglesia_id" class="block mb-2 text-l font-medium text-gray-900 dark:text-black">Sede o Altar</label>
                                     <select id="iglesia_id" class="bg-white-50 border border-gray-300 text-black text-m rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" name="iglesia_id">
                                         <option>Selecciona una Iglesia</option>
                                     </select>

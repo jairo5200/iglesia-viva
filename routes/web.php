@@ -43,6 +43,8 @@ Route::controller(PageController::class)->group(function (){
     Route::get('/listablogs', 'blogsPagina')->name('blogsPagina');
     //enrutamiento hacia la pagina de cada blog
     Route::get('/blog/{id}', 'blog')->name('blog');
+    //enrutamiento hacia la pagina nuevo
+    Route::get('/nuevo', 'nuevo')->name('nuevo');
 
 });
 

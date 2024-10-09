@@ -105,4 +105,9 @@ class PageController extends Controller
         // retornamos la vista de blog
         return view('paginas.blog',compact('blog'));
     }
+
+    public function nuevo(){
+        // retornamos la vista de nuevo
+        return view('paginas.nuevo');
+    }
 }

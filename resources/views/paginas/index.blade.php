@@ -39,9 +39,19 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+<a href="{{route('nuevo')}}">
+<div id="banner" class="flex flex-col items-center justify-between px-4 py-10 mx-auto md:flex-row">
+    <div class=" flex-col mx-auto max-w-7xl">
+        <h2 class="text-4xl font-bold text-amber-950">eres nuevo?</h2>
+        <h2 class="text-3xl font-bold text-amber-500">"alguna frase de muestra"</h2>
+        <p class="text-lg text-zinc-900">¡Bienvenido a nuestra comunidad!</p>
+    </div>
+</div>
+</a>
 
-<div class="flex flex-col items-center justify-between px-4 py-3 mx-auto max-w-7xl md:flex-row bg-white">
-    <section class="px-4 py-12 mx-auto max-w-7xl">
+
+<div class="flex flex-col items-center justify-between px-4 mx-auto max-w-7xl md:flex-row bg-white">
+    <section class="px-4 py-5 mx-auto max-w-7xl">
         <h1 class="mb-3 text-4xl font-bold text-center text-gray-900 md:leading-tight md:text-5xl" itemprop="headline">Noticias y Eventos</h1>
         <p class="mb-2 text-lg text-gray-500">acontinuacion se presentan las noticias y eventos mas relevantes!</p>
         <div id="noticias-container" class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">

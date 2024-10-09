@@ -17,6 +17,15 @@
     background: linear-gradient(180deg, rgba(251,191,36,1) 0%, rgba(255,255,255,1) 100%);
 }
 
+#fondo_soy_nuevo {
+    background-image: url('../imagen/autumn.jpg');
+    background-size: cover;
+}
+
+#formulario_soy_nuevo {
+    backdrop-filter: blur(5px);
+}
+
 /* From Uiverse.io by RaspberryBee */
 /* The switch - the box around the slider */
 .switch {

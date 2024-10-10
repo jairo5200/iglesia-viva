@@ -28,7 +28,7 @@ class ContactanosMailable extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Saludo de bienvenida',
+            subject: 'informacion del solicitante',
         );
     }
 

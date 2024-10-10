@@ -117,8 +117,11 @@ class PageController extends Controller
         // validamos los datos del formulario
         $request->validate([
             'nombre' => 'required|string|max:100',
+            'apellido' => 'required|string',
+            'numero' => 'required|string',
             'email' => 'required|email',
         ]);
+
         Mail::to('jairo5200@gmail.com')->send(new ContactanosMailable($request->all()));
 
         session()->flash('success', 'Mensaje enviado!');

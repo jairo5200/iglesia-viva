@@ -11,10 +11,12 @@ use App\Http\Controllers\NoticiaController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PaisController;
+use App\Mail\ContactanosMailable;
 use App\Models\Departamento;
 use App\Models\Iglesia;
 use App\Models\Municipio;
 use App\Models\Pais;
+use Illuminate\Support\Facades\Mail;
 use Laravel\Fortify\Http\Controllers\RegisteredUserController;
 use Laravel\Fortify\Features;
 use Laravel\Fortify\RoutePath;
@@ -45,6 +47,8 @@ Route::controller(PageController::class)->group(function (){
     Route::get('/blog/{id}', 'blog')->name('blog');
     //enrutamiento hacia la pagina nuevo
     Route::get('/nuevo', 'nuevo')->name('nuevo');
+    //ruta que enviara el correo
+    Route::post('/contactanos', 'contactanos')->name('contactanos');
 
 });
 
@@ -73,26 +77,25 @@ Route::middleware([
 
 Route::group(['middleware' => config('fortify.middleware', ['web'])], function () {
 
-//Reutilizacion de la ruta de registro
-Route::get(RoutePath::for('register', '/register'), [RegisteredUserController::class, 'create'])
-            ->name('register');
-Route::post(RoutePath::for('register', '/register'), [RegisteredUserController::class, 'store']);
+    //Reutilizacion de la ruta de registro
+    Route::get(RoutePath::for('register', '/register'), [RegisteredUserController::class, 'create'])
+                ->name('register');
+    Route::post(RoutePath::for('register', '/register'), [RegisteredUserController::class, 'store']);
 
-// Esta ruta carga los departamentos de un determinado pais
-Route::get('/paises/{id}/departamentos', function ($id){
-    $pais = Pais::find($id);
-    return Departamento::where('pais_id', $pais->id)->get();
-});
-// Esta ruta carga los municipios de un determinado departamento
-Route::get('/departamentos/{id}/municipios', function ($id){
-    $departamento = Departamento::find($id);
-    return Municipio::where('departamento_id', $departamento->id)->get();
-});
-// Esta ruta carga las iglesias de un determinado municipio
-Route::get('/municipios/{id}/iglesias', function ($id){
-    $municipio = Municipio::find($id);
-    return Iglesia::where('municipio_id', $municipio->id)->get();
+    // Esta ruta carga los departamentos de un determinado pais
+    Route::get('/paises/{id}/departamentos', function ($id){
+        $pais = Pais::find($id);
+        return Departamento::where('pais_id', $pais->id)->get();
+    });
+    // Esta ruta carga los municipios de un determinado departamento
+    Route::get('/departamentos/{id}/municipios', function ($id){
+        $departamento = Departamento::find($id);
+        return Municipio::where('departamento_id', $departamento->id)->get();
+    });
+    // Esta ruta carga las iglesias de un determinado municipio
+    Route::get('/municipios/{id}/iglesias', function ($id){
+        $municipio = Municipio::find($id);
+        return Iglesia::where('municipio_id', $municipio->id)->get();
+    });
 });
 
-
-});

@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactanosMailable;
 use App\Models\Blog;
 use App\Models\Noticia;
 use GuzzleHttp\Psr7\Response;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class PageController extends Controller
 {
@@ -109,5 +111,17 @@ class PageController extends Controller
     public function nuevo(){
         // retornamos la vista de nuevo
         return view('paginas.nuevo');
+    }
+
+    public function contactanos(Request $request) {
+        // validamos los datos del formulario
+        $request->validate([
+            'nombre' => 'required|string|max:100',
+            'email' => 'required|email',
+        ]);
+        Mail::to('jairo5200@gmail.com')->send(new ContactanosMailable($request->all()));
+
+        session()->flash('success', 'Mensaje enviado!');
+        return redirect()->route('nuevo');
     }
 }

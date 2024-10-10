@@ -6,7 +6,7 @@
     <section class="px-4 py-12 mx-auto max-w-7xl">
         <h1 class="mb-3 text-4xl font-bold text-center text-gray-900 md:leading-tight md:text-5xl" itemprop="headline">Blogs</h1>
         <p class="mb-2 text-lg text-gray-500">acontinuacion se presentan los Blogs!</p>
-        <div id="blogs-container" class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
+        <div id="blogs-container" class="grid flex justify-between sm:grid-cols-2  md:grid-cols-4 ">
             @include('paginas.datablogs')
         </div>
     </section>

@@ -1,15 +1,18 @@
 @foreach ( $blogs as $blog )
-    <div class="">
-      <a href="{{route('blog', $blog->id)}}">
-        <h2 class="mb-2 text-lg font-semibold text-gray-900 hover:text-purple-700">
-            {{$blog->titulo}}
-        </h2>
-        <img src="/imagen/{{$blog->imagen}}" class="w-full object-contain mb-1 bg-center rounded" alt="imagen-blog"/>
-      </a>
-      <p class="mb-3 text-sm font-normal text-gray-500">
-        <a href="{{route('blog', $blog->id)}}" class="font-medium text-gray-900 hover:text-purple-700">{{$blog->user->name}}</a>
+<div class="card my-4 mx-2 relative flex flex-col min-w-0 break-words bg-white shadow-lg">
+    <a href="{{route('blog', $blog->id)}}">
+  <div class="card-details  w-full object-contain bg-center rounded overflow-hidden">
+  <img src="/imagen/{{$blog->imagen}}" class="object-cover h-60" alt="imagen-blog"/>
+    <p class="text-title px-2">{{$blog->titulo}}</p>
+    <p class=" text-body mb-3 text-sm font-normal text-gray-500 px-2">
+        <a href="{{route('blog', $blog->id)}}" class="font-medium text-gray-900">{{$blog->user->name}}</a>
         • {{date('d/m/Y',strtotime($blog->updated_at))}}
       </p>
-    </div>
+  </div>
+  <a href="{{route('blog', $blog->id)}}"><button class="card-button">Leer mas...</button></a>
+  </a>
+</div>
+
+
     @endforeach
 
